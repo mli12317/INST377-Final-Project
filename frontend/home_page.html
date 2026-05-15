@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js" defer></script>
+    </head>
+
+    <body>
+        <header class="navigation">
+            <h1 class="logo">Interactive Art Explorer</h1>
+
+            <!-- Navigation -->
+             <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="about_page.html">About</a></li>
+                    <li><a href="help_page.html">Help</a></li>
+                </ul>
+             </nav>
+        </header>
+
+        <!-- Main Section -->
+         <main class="main-section">
+
+            <section class="content">
+                <h1>Explore Art, Accessible & Simplified.</h1>
+
+                 <!-- Search Box -->
+                <form onsubmit="searchArt(event)">
+                    <input type="search" id="searchInput" placeholder="Search by artist, title, etc.">
+                    <button type="submit">Search</button>
+                </form>
+
+                <!-- Artwork -->
+                 <section id="artworkResults" class="artwork-results"></section>
+
+            </section>  
+
+            <aside class="filters">
+                <!-- Sidebar (Browse by Category) -->
+                 <h3>Browse by Category</h3>
+
+                 <form id="filterForm">
+                    <!-- Artist -->
+                    <label for="artist">Artist</label>
+                    <select id="artist" required></select>
+
+                    <!-- Classification -->
+                    <label for="classification">Classification</label>
+                    <select id="classification" required></select>
+
+                    <!-- Submit -->
+                     <button type="submit">Apply Filters</button>
+                </form>
+            </aside>
+
+         </main>
+         
+    </body>
+
+</html>
