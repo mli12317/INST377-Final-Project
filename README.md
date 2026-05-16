@@ -8,8 +8,8 @@ This project was created to make museum artwork easier to explore in a simple an
 The website is designed mainly for modern desktop browsers.
 
 This application was tested on:
-Google Chrome (Desktop)
-Microsoft Edge (Desktop)
+-Google Chrome 
+-Microsoft Edge 
 
 ## Developer Manual
 [Click here for Developer Manual](docs/developer_manual.md)
