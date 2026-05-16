@@ -6,6 +6,7 @@ This project was created to make museum artwork easier to explore in a simple an
 
 ## Target Browsers
 The website is designed mainly for modern desktop browsers.
+
 This application was tested on:
 Google Chrome (Desktop)
 Microsoft Edge (Desktop)
