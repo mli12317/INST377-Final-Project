@@ -21,6 +21,7 @@
                     <li><a href="home_page.html">Home</a></li>
                     <li><a href="about_page.html">About</a></li>
                     <li><a href="help_page.html">Help</a></li>
+                    <li><a href="favorites_page.html">Favorites</a></li>
                 </ul>
              </nav>
         </header>
@@ -33,7 +34,11 @@
 
                  <!-- Search Box -->
                 <form onsubmit="searchArt(event)">
-                    <input type="search" id="searchInput">
+                    <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by artwork or artist..."
+                    >
                     <button type="submit">Search</button>
                 </form>
 
@@ -62,25 +67,32 @@
             </section>  
 
             <aside class="filters">
-                <!-- Sidebar (Browse by Category) -->
-                 <h3>Browse by Category</h3>
 
-                 <form id="filterForm">
-                    <!-- Artist -->
-                    <label for="artist">Artist</label>
-                    <select id="artist"></select>
+    <!-- Sidebar (Browse by Category) -->
+    <h3>Browse by Category</h3>
 
-                    <!-- Classification -->
-                    <label for="classification">Classification</label>
-                    <select id="classification"></select>
+    <form id="filterForm">
 
-                    <!-- Submit -->
-                     <button type="submit">Apply Filters</button>
-                </form>
+        <!-- Classification -->
+        <label for="classification">Classification</label>
 
-                <!-- Image -->
-                 <img src="https://chipublib.bibliocommons.com/events/uploads/images/full/6772c070ac18b27593700eca9012206f/artic445x445.jpg" alt="Art Institute of Chicago API Logo" width="300">
-            </aside>
+        <select id="classification"></select>
+
+        <!-- Submit -->
+        <button type="submit">
+            Apply Filters
+        </button>
+
+    </form>
+
+    <!-- Image -->
+    <img
+        src="https://chipublib.bibliocommons.com/events/uploads/images/full/6772c070ac18b27593700eca9012206f/artic445x445.jpg"
+        alt="Art Institute of Chicago API Logo"
+        width="300"
+    >
+
+</aside>
 
          </main>
 

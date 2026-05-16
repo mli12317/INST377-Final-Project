@@ -3,6 +3,7 @@ const axios = require('axios');
 
 const router = express.Router();
 
+// Search artworks
 router.get('/search', async (req, res) => {
 
     try {
@@ -41,16 +42,13 @@ router.get('/search', async (req, res) => {
 
 });
 
-
-
-
-
+// Artists route
 router.get('/artists', async (req, res) => {
 
     try {
 
         const response = await axios.get(
-            'https://api.artic.edu/api/v1/agents?limit=100'
+            'https://api.artic.edu/api/v1/agents?limit=1000'
         );
 
         res.json(response.data);
@@ -65,16 +63,20 @@ router.get('/artists', async (req, res) => {
 
 });
 
-
-
-
-
+// Classifications route
 router.get('/classifications', async (req, res) => {
 
     try {
 
         const response = await axios.get(
-            'https://api.artic.edu/api/v1/artworks?limit=100'
+            'https://api.artic.edu/api/v1/artworks',
+            {
+                params: {
+                    limit: 300,
+                    fields:
+                        'id,title,image_id,artist_title,classification_title'
+                }
+            }
         );
 
         res.json(response.data);
@@ -89,10 +91,7 @@ router.get('/classifications', async (req, res) => {
 
 });
 
-
-
-
-
+// Featured artworks route
 router.get('/featured', async (req, res) => {
 
     try {
