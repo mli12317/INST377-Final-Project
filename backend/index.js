@@ -21,10 +21,4 @@ app.get('/', (req, res) => {
 app.use('/api/artworks', artworksRoutes);
 app.use('/api/favorites', favoritesRoutes);
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-
-    console.log(`Server running on port ${PORT}`);
-
-});
+module.exports = app;
