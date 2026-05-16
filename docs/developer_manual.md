@@ -49,7 +49,7 @@ SUPABASE_KEY=your_supabase_anon_key
 PORT=3000
 ```
 
-These values can be found in the Supabase project settings.
+These can be found in the Supabase api project settings.
 
 ---
 
@@ -155,7 +155,6 @@ Adds a favorite artwork to the Supabase database.
 The APIs can be tested using:
 
 - Browser
-- Postman
 - Insomnia
 - PowerShell
 
@@ -217,23 +216,23 @@ The application is intended to be deployed using:
 ```text
 INST377-Final-Project
 
-frontend
-- home_page.html
-- about_page.html
-- help_page.html
-- style.css
-- app.js
+frontend:
+home_page.html
+about_page.html
+help_page.html
+style.css
+app.js
 
-backend
-- index.js
-- artworks.js
-- favorites.js
-- supabase.js
-- package.json
-- .env
+backend:
+index.js
+artworks.js
+favorites.js
+supabase.js
+package.json
+.env
 
 docs
-- developer_manual.md
+developer_manual.md
 
 README.md
 ```
@@ -241,8 +240,6 @@ README.md
 ---
 
 # Authors
+Sara Susa
+Megan
 
-- Sara Susa
-- Megan
-
-Created for the INST377 Final Project.
