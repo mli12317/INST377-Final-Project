@@ -1,4 +1,5 @@
 Developer Manual
+
 How to Install the Application
 1. Clone the Repository
 git clone:  https://github.com/mli12317/INST377-Final-Project.git
