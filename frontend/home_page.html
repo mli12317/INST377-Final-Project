@@ -3,6 +3,12 @@
         <title>Home Page</title>
         <link rel="stylesheet" href="style.css">
         <script src="app.js" defer></script>
+        <!-- 2 JS Libraries -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     </head>
 
     <body>
@@ -27,12 +33,31 @@
 
                  <!-- Search Box -->
                 <form onsubmit="searchArt(event)">
-                    <input type="search" id="searchInput" placeholder="Search by artist, title, etc.">
+                    <input type="search" id="searchInput">
                     <button type="submit">Search</button>
                 </form>
 
+                <!-- Swiper JS Library -->
+                 <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="swiperWrapper">
+                        <!-- Slides Inserted Here dynamically -->
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                     <div class="swiper-button-prev"></div>
+                     <div class="swiper-button-next"></div>
+
+                     <!-- Pagination -->
+                      <div class="swiper-pagination"></div>
+                 </div>
+
                 <!-- Artwork -->
                  <section id="artworkResults" class="artwork-results"></section>
+
+                 <h3>Art by Classification</h3>
+                <div style="width: 650px; height: 650px;">
+                    <canvas id="classificationChart"></canvas>
+                </div>
 
             </section>  
 
@@ -43,18 +68,27 @@
                  <form id="filterForm">
                     <!-- Artist -->
                     <label for="artist">Artist</label>
-                    <select id="artist" required></select>
+                    <select id="artist"></select>
 
                     <!-- Classification -->
                     <label for="classification">Classification</label>
-                    <select id="classification" required></select>
+                    <select id="classification"></select>
 
                     <!-- Submit -->
                      <button type="submit">Apply Filters</button>
                 </form>
+
+                <!-- Image -->
+                 <img src="https://chipublib.bibliocommons.com/events/uploads/images/full/6772c070ac18b27593700eca9012206f/artic445x445.jpg" alt="Art Institute of Chicago API Logo" width="300">
             </aside>
 
          </main>
+
+         <footer class="footer">
+            <p><strong>Interactive Art Explorer © 2026</strong></p>
+            <p>Reorganizes publicly available museum data into a more interactive and accessible browsing experience.</p>
+            <a href="https://api.artic.edu/docs/#introduction">Art Institute of Chicago</a>
+         </footer>
          
     </body>
 
