@@ -12,7 +12,7 @@ After cloning, open the project folder in VS Code.
 
 ---
 
-## 2. Install Backend Dependencies
+## 2. Install Backend 
 
 Open a terminal inside the backend folder:
 
@@ -24,7 +24,6 @@ npm install
 This installs all required backend packages.
 
 ### Packages Used
-
 - express
 - cors
 - dotenv
@@ -35,7 +34,7 @@ This installs all required backend packages.
 
 ## 3. Create the Environment Variables File
 
-Inside the backend folder, create a file named:
+Inside the backend folder create a file named:
 
 ```text
 .env
@@ -81,13 +80,13 @@ Use the following columns:
 
 ## 5. Run the Backend Server
 
-Inside the backend folder, run:
+Inside the backend folder run:
 
 ```bash
 node index.js
 ```
 
-If successful, the terminal should display:
+If its successful the terminal should then display:
 
 ```bash
 Server running on port 3000
