@@ -41,4 +41,76 @@ router.get('/search', async (req, res) => {
 
 });
 
+
+
+
+
+router.get('/artists', async (req, res) => {
+
+    try {
+
+        const response = await axios.get(
+            'https://api.artic.edu/api/v1/agents?limit=100'
+        );
+
+        res.json(response.data);
+
+    } catch (error) {
+
+        res.status(500).json({
+            error: 'Failed to fetch artists'
+        });
+
+    }
+
+});
+
+
+
+
+
+router.get('/classifications', async (req, res) => {
+
+    try {
+
+        const response = await axios.get(
+            'https://api.artic.edu/api/v1/artworks?limit=100'
+        );
+
+        res.json(response.data);
+
+    } catch (error) {
+
+        res.status(500).json({
+            error: 'Failed to fetch classifications'
+        });
+
+    }
+
+});
+
+
+
+
+
+router.get('/featured', async (req, res) => {
+
+    try {
+
+        const response = await axios.get(
+            'https://api.artic.edu/api/v1/artworks?limit=12'
+        );
+
+        res.json(response.data);
+
+    } catch (error) {
+
+        res.status(500).json({
+            error: 'Failed to fetch featured artworks'
+        });
+
+    }
+
+});
+
 module.exports = router;
