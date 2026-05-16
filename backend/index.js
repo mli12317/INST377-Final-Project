@@ -3,7 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const artworksRoutes = require('./artworks');
-const favoritesRoutes = require('./favorites');
+// const favoritesRoutes = require('./favorites');
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/artworks', artworksRoutes);
-app.use('/api/favorites', favoritesRoutes);
+// app.use('/api/favorites', favoritesRoutes);
 
 const PORT = process.env.PORT || 3000;
 
