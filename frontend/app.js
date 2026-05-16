@@ -41,9 +41,7 @@ async function loadClassifications() {
 // Loads a preview of featured artworks (comes from Swiper library)
 async function loadFeaturedArtworks() {
 
-    const response = await fetch(
-        `http://localhost:3000/api/artworks/featured`
-    );
+    const response = await fetch(`http://localhost:3000/api/artworks/featured`);
 
     const featuredArtworks = await response.json();
 
@@ -58,7 +56,7 @@ async function loadFeaturedArtworks() {
         const slide = document.createElement('div');
         slide.classList.add('swiper-slide');
 
-        const imageUrl = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`;
+        const imageURL = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`;
 
         slide.innerHTML = `
             <img src="${imageUrl}" alt="${artwork.title}">
