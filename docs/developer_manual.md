@@ -241,5 +241,5 @@ README.md
 
 # Authors
 Sara Susa
-Megan
+Megan Li
 

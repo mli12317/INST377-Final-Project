@@ -1,11 +1,13 @@
+// Loads artists in the category section
 async function loadArtists() {
-    const artists = await fetch('http://localhost:3000/api/artworks/artists');
-    const data = await artists.json();
+    const response = await fetch('http://localhost:3000/api/artworks/artists');
+    const result = await response.json();
+    const artists = result.data;
 
     const select = document.getElementById('artist');
     select.innerHTML = `<option value="">Select Artist</option>`;
 
-    data.data.forEach(artist => {
+    artists.forEach(artist => {
         const option = document.createElement('option');
         option.value = artist.title;
         option.textContent = artist.title;
@@ -13,16 +15,16 @@ async function loadArtists() {
     });
 }
 
+// Loads classifications in the category section
 async function loadClassifications() {
     const response = await fetch('http://localhost:3000/api/artworks/classifications');
-    const data = await response.json();
+    const classificationResponse = await response.json();
 
     const select = document.getElementById('classification');
     select.innerHTML = `<option value="">Select Classification</option>`;
 
     const classifications = new Set();
-
-    data.data.forEach(art => {
+    classificationResponse.data.forEach(art => {
         if (art.classification_title) {
             classifications.add(art.classification_title);
         }
@@ -36,30 +38,27 @@ async function loadClassifications() {
     });
 }
 
+// Loads a preview of featured artworks (comes from Swiper library)
 async function loadFeaturedArtworks() {
-
-    const randomPage = Math.floor(Math.random() * 100) + 1;
 
     const response = await fetch(
         `http://localhost:3000/api/artworks/featured`
     );
 
-    const data = await response.json();
+    const featuredArtworks = await response.json();
 
     const swiperWrapper = document.getElementById('swiperWrapper');
 
     swiperWrapper.innerHTML = '';
 
-    data.data.forEach(artwork => {
+    featuredArtworks.data.forEach(artwork => {
 
         if (!artwork.image_id) return;
 
         const slide = document.createElement('div');
         slide.classList.add('swiper-slide');
 
-        const imageUrl = `
-            https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg
-        `;
+        const imageUrl = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`;
 
         slide.innerHTML = `
             <img src="${imageUrl}" alt="${artwork.title}">
@@ -99,19 +98,20 @@ async function loadFeaturedArtworks() {
     });
 }
 
+// Loads a pie chart of total classifications (comes from Chart.js)
 async function loadClassificationChart() {
     const response = await fetch('http://localhost:3000/api/artworks/classifications');
-    const data = await response.json();
+    const classificationPieChartResponse = await response.json();
 
-    const counts = {};
+    const classificationCount = {};
 
-    data.data.forEach(art => {
-        const type = art.classification_title || "Unknown";
-        counts[type] = (counts[type] || 0) + 1;
+    classificationPieChartResponse.data.forEach(art => {
+        const type = art.classification_title || 'Unknown';
+        classificationCount[type] = (classificationCount[type] || 0) + 1;
     });
 
-    const labels = Object.keys(counts);
-    const values = Object.values(counts);
+    const labels = Object.keys(classificationCount);
+    const values = Object.values(classificationCount);
 
     const ctx = document.getElementById('classificationChart');
 
@@ -122,12 +122,12 @@ async function loadClassificationChart() {
             datasets: [{
                 data: values,
                 backgroundColor: [
-                    '#ff6384',
-                    '#36a2eb',
-                    '#ffce56',
+                    '#548c6e',
+                    '#8bbab4',
+                    '#7beda5',
                     '#4bc0c0',
-                    '#9966ff',
-                    '#ff9f40'
+                    '#bf89a9',
+                    '#4a58b5'
                 ]
             }]
         },
@@ -136,6 +136,7 @@ async function loadClassificationChart() {
         }
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     loadArtists();
