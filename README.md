@@ -11,4 +11,4 @@ Google Chrome (Desktop)
 Microsoft Edge (Desktop)
 
 ## Developer Manual
-Click here to view the Developer Manual (docs/developer_manual.md)
+[Click here for Developer Manual](docs/developer_manual.md)
