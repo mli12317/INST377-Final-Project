@@ -313,7 +313,6 @@ async function saveFavorite(art) {
     alert('Favorite Saved');
 
 }
-
 // Load favorites
 async function loadFavorites() {
 
@@ -322,6 +321,8 @@ async function loadFavorites() {
     );
 
     const favorites = await response.json();
+
+    console.log(favorites);
 
     const container =
         document.getElementById('favoritesContainer');
@@ -332,23 +333,63 @@ async function loadFavorites() {
 
     favorites.forEach(art => {
 
-        container.innerHTML += `
+        const card = document.createElement('div');
 
-            <div class="art-card">
+        card.classList.add('art-card');
 
-                <img src="${art.image_url}" width="250">
+        card.innerHTML = `
 
-                <h3>${art.title}</h3>
+            <img src="${art.image_url}" width="250">
 
-                <p>${art.artist}</p>
+            <h3>${art.title}</h3>
 
-            </div>
+            <p>${art.artist}</p>
+
+            <button class="remove-btn">
+                Remove Favorite
+            </button>
 
         `;
+
+        const removeButton =
+            card.querySelector('.remove-btn');
+
+        removeButton.addEventListener('click', () => {
+
+            removeFavorite(art.id);
+
+        });
+
+        container.appendChild(card);
 
     });
 }
 
+// Remove favorite
+async function removeFavorite(id) {
+
+    try {
+
+        const response = await fetch(
+            `http://localhost:3000/api/favorites/${id}`,
+            {
+                method: 'DELETE'
+            }
+        );
+
+        const result = await response.json();
+
+        console.log(result);
+
+        loadFavorites();
+
+    } catch (error) {
+
+        console.log(error);
+
+    }
+
+}
 // Filter artworks
 async function filterArtworks(event) {
 

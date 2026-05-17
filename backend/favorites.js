@@ -64,4 +64,34 @@ router.post('/', async (req, res) => {
 
 });
 
+// Delete favorite
+router.delete('/:id', async (req, res) => {
+
+    try {
+
+        const id = req.params.id;
+
+        const { data, error } = await supabase
+            .from('favorites')
+            .delete()
+            .eq('id', id);
+
+        if (error) throw error;
+
+        res.json({
+            message: 'Favorite removed',
+            data
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            error: error.message
+        });
+
+    }
+
+});
 module.exports = router;

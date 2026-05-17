@@ -236,3 +236,13 @@ body {
         max-width: 100%;
     }
 }
+#favoritesContainer {
+    margin-bottom: 50px;
+}
+
+.art-card button {
+    margin-top: 10px;
+}
+.footer {
+    clear: both;
+}
