@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js" defer></script>
+       =
+       
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    </head>
+
+    <body>
+        <header class="navigation">
+            <h1 class="logo">Interactive Art Explorer</h1>
+
+           
+             <nav>
+                <ul>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li><a href="about_page.html">About</a></li>
+                    <li><a href="help_page.html">Help</a></li>
+                    <li><a href="favorites_page.html">Favorites</a></li>
+                </ul>
+             </nav>
+        </header>
+
+        
+         <main class="main-section">
+
+            <section class="content">
+                <h1>Explore Art, Accessible & Simplified.</h1>
+
+                
+                <form onsubmit="searchArt(event)">
+                    <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search by artwork or artist..."
+                    >
+                    <button type="submit">Search</button>
+                </form>
+
+                
+                 <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="swiperWrapper">
+                        <!-- Slides Inserted Here dynamically -->
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                     <div class="swiper-button-prev"></div>
+                     <div class="swiper-button-next"></div>
+
+                   
+                      <div class="swiper-pagination"></div>
+                 </div>
+
+                <!-- Artwork -->
+                 <section id="artworkResults" class="artwork-results"></section>
+
+                 <h3>Art by Classification</h3>
+                <div style="width: 650px; height: 650px;">
+                    <canvas id="classificationChart"></canvas>
+                </div>
+
+            </section>  
+
+            <aside class="filters">
+
+  
+    <h3>Browse by Category</h3>
+
+    <form id="filterForm">
+
+        <!-- Classification -->
+        <label for="classification">Classification</label>
+
+        <select id="classification"></select>
+
+        <!-- Submit -->
+        <button type="submit">
+            Apply Filters
+        </button>
+
+    </form>
+
+    <!-- Image -->
+    <img
+        src="https://chipublib.bibliocommons.com/events/uploads/images/full/6772c070ac18b27593700eca9012206f/artic445x445.jpg"
+        alt="Art Institute of Chicago API Logo"
+        width="300"
+    >
+
+</aside>
+
+         </main>
+
+         <footer class="footer">
+            <p><strong>Interactive Art Explorer © 2026</strong></p>
+            <p>Reorganizes publicly available museum data into a more interactive and accessible browsing experience.</p>
+            <a href="https://api.artic.edu/docs/#introduction">Art Institute of Chicago</a>
+         </footer>
+         
+    </body>
+
+</html>
