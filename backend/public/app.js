@@ -1,11 +1,9 @@
-const API_BASE =
-    'https://inst-377-final-project-chi.vercel.app';
 
 // Loads artists in the category section
 async function loadArtists() {
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/classifications`
+        '/api/artworks/classifications'
     );
 
     const result = await response.json();
@@ -51,7 +49,7 @@ async function loadArtists() {
 async function loadClassifications() {
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/classifications`
+        '/api/artworks/classifications'
     );
 
     const result = await response.json();
@@ -97,7 +95,7 @@ async function loadClassifications() {
 async function loadFeaturedArtworks() {
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/featured`
+        '/api/artworks/featured'
     );
 
     const featuredArtworks = await response.json();
@@ -170,7 +168,7 @@ async function loadFeaturedArtworks() {
 async function loadClassificationChart() {
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/classifications`
+        '/api/artworks/classifications'
     );
 
     const result = await response.json();
@@ -245,7 +243,7 @@ async function searchArt(event) {
     }
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/search?q=${searchValue}`
+        `/api/artworks/search?q=${searchValue}`
     );
 
     const artworks = await response.json();
@@ -292,7 +290,7 @@ async function searchArt(event) {
 async function saveFavorite(art) {
 
     await fetch(
-        `${API_BASE}/api/favorites`,
+        '/api/favorites',
         {
 
             method: 'POST',
@@ -321,7 +319,7 @@ async function saveFavorite(art) {
 async function loadFavorites() {
 
     const response = await fetch(
-        `${API_BASE}/api/favorites`
+        '/api/favorites'
     );
 
     const favorites = await response.json();
@@ -375,7 +373,7 @@ async function removeFavorite(id) {
     try {
 
         const response = await fetch(
-            `${API_BASE}/api/favorites/${id}`,
+            `/api/favorites/${id}`,
             {
                 method: 'DELETE'
             }
@@ -404,7 +402,7 @@ async function filterArtworks(event) {
         document.getElementById('classification').value;
 
     const response = await fetch(
-        `${API_BASE}/api/artworks/classifications`
+        '/api/artworks/classifications'
     );
 
     const result = await response.json();
