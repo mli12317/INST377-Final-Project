@@ -1,5 +1,5 @@
 const API_BASE =
-    'https://inst377-final-project-rho.vercel.app';
+    'https://inst-377-final-project-chi.vercel.app';
 
 // Loads artists in the category section
 async function loadArtists() {
