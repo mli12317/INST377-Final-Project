@@ -72,7 +72,7 @@ router.get('/classifications', async (req, res) => {
             'https://api.artic.edu/api/v1/artworks',
             {
                 params: {
-                    limit: 300,
+                    limit: 1000,
                     fields:
                         'id,title,image_id,artist_title,classification_title'
                 }
