@@ -20,6 +20,7 @@ router.get('/search', async (req, res) => {
             }
         );
 
+        
         const artworks = response.data.data.map(art => ({
             id: art.id,
             title: art.title,
