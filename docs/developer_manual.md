@@ -196,13 +196,13 @@ The application is intended to be deployed using:
 - Some artwork entries may not contain images
 - Artist filters may load slowly
 - Mobile responsiveness is still limited
+- Sadly the APi might lock you out
 
 ---
 
 ## 12. Future Improvements
 
 - Add user authentication
-- Add pagination
 - Add individual artwork detail pages
 - Improve mobile responsiveness
 - Add dark mode
