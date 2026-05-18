@@ -20,7 +20,6 @@ router.get('/search', async (req, res) => {
             }
         );
 
-        
         const artworks = response.data.data.map(art => ({
             id: art.id,
             title: art.title,
@@ -35,8 +34,10 @@ router.get('/search', async (req, res) => {
 
     } catch (error) {
 
+        console.log(error);
+
         res.status(500).json({
-            error: 'Failed to fetch artworks'
+            error: error.message
         });
 
     }
@@ -56,8 +57,10 @@ router.get('/artists', async (req, res) => {
 
     } catch (error) {
 
+        console.log(error);
+
         res.status(500).json({
-            error: 'Failed to fetch artists'
+            error: error.message
         });
 
     }
@@ -73,7 +76,7 @@ router.get('/classifications', async (req, res) => {
             'https://api.artic.edu/api/v1/artworks',
             {
                 params: {
-                    limit: 1000,
+                    limit: 300,
                     fields:
                         'id,title,image_id,artist_title,classification_title'
                 }
@@ -84,8 +87,10 @@ router.get('/classifications', async (req, res) => {
 
     } catch (error) {
 
+        console.log(error);
+
         res.status(500).json({
-            error: 'Failed to fetch classifications'
+            error: error.message
         });
 
     }
@@ -105,8 +110,10 @@ router.get('/featured', async (req, res) => {
 
     } catch (error) {
 
+        console.log(error);
+
         res.status(500).json({
-            error: 'Failed to fetch featured artworks'
+            error: error.message
         });
 
     }
