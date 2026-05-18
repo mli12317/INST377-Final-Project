@@ -79,6 +79,11 @@ router.get('/classifications', async (req, res) => {
                     limit: 300,
                     fields:
                         'id,title,image_id,artist_title,classification_title'
+                },
+
+                headers: {
+                    'AIC-User-Agent':
+                        'Interactive-Art-Explorer (sarasusa@example.com)'
                 }
             }
         );
@@ -87,10 +92,12 @@ router.get('/classifications', async (req, res) => {
 
     } catch (error) {
 
-        console.log(error);
+        console.log(error.response?.data || error.message);
 
         res.status(500).json({
-            error: error.message
+            error:
+                error.response?.data ||
+                error.message
         });
 
     }
